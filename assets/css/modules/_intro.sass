@@ -58,9 +58,8 @@
         z-index: -1
         transition: left .2s ease-in-out
 
-      &:hover
-        .btn-background
-          left: 0
+      &:hover .btn-background
+        left: 0
 
       &:focus
         outline: none
@@ -75,6 +74,8 @@
       position: absolute
       bottom: 21px
       right: -12px
+      max-width: 500px
+      height: auto
 
   &--options
     display: flex
@@ -99,77 +100,70 @@
     p
       margin-bottom: 0
 
+
+/* =========================
+   MOBILE FIXES
+   ========================= */
+
 @media (max-width: 900px)
+  .intro--banner
+    height: 380px
 
-  .intro
+    h1
+      font-size: 55px
 
-    &--banner
-      height: 380px
+    img
+      width: 430px
+      right: 0
 
-      h1
-        font-size: 55px
-
-      img
-        width: 430px
-
-    &--options
-
-      & > a
-        margin-right: 30px
-
-        &:last-child
-          margin-right: 0
 
 @media (max-width: 767px)
+  .intro--banner
+    height: 305px
 
-  .intro
+    h1
+      font-size: 44px
 
-    &--banner
-      height: 305px
+    img
+      width: 330px
 
-      h1
-        font-size: 44px
+  .intro--options
+    display: block
 
-      img
-        width: 330px
-
-    &--options
+    & > a
       display: block
+      max-width: 100%
+      margin: 0 0 30px 0
 
-      & > a
-        display: block
-        max-width: 100%
-        margin: 0 0 30px 0
+      &:last-child
+        margin-bottom: 0
 
-        &:last-child
-          margin-bottom: 0
 
 @media (max-width: 600px)
-
   .intro
+    justify-content: flex-start
+    padding-top: 80px
 
-    &--banner
-      height: 360px
+  .intro--banner
+    height: 420px
 
-      h1
-        font-size: 55px
+    &::before,
+    &::after
+      display: none
 
-      img
-        display: none
+    h1
+      font-size: 36px
+
+    button
+      position: relative
+      z-index: 2
+
+    img
+      width: 300px
+      bottom: 0
+      right: -8px
+
 
 @media (max-width: 600px) and (max-height: 750px)
-
-  .intro
-
-    &--banner
-      height: auto
-
-      &::before,
-      &::after
-        display: none
-
-      h1
-        margin-top: 0
-
-    &--options
-      display: none
+  .intro--options
+    display: none
